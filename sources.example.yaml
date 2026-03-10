@@ -1,0 +1,21 @@
+# RSS 数据源配置
+rss_sources:
+  - name: "mit_tech_review"
+    url: "https://www.technologyreview.com/feed/"
+  - name: "techmeme"
+    url: "https://www.techmeme.com/feed.xml"
+
+# 全局运行设定
+settings:
+  default_hours: 24
+  max_items: 50
+  cluster_similarity_threshold: 0.78
+  talkability_threshold: 5.0
+
+# 容错 API Key 池
+api_keys:
+  gemini:
+    - "YOUR_GEMINI_KEY_1"
+    - "YOUR_GEMINI_KEY_2_OPTIONAL"
+  minimax:
+    - "YOUR_MINIMAX_KEY_1"

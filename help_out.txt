@@ -1,0 +1,25 @@
+Help on method generate_images in module google.genai.models:
+
+generate_images(*, model: str, prompt: str, config: Union[google.genai.types.GenerateImagesConfig, google.genai.types.GenerateImagesConfigDict, NoneType] = None) -> google.genai.types.GenerateImagesResponse method of google.genai.models.Models instance
+    Generates images based on a text description and configuration.
+
+    Args:
+      model (str): The model to use.
+      prompt (str): A text description of the images to generate.
+      config (GenerateImagesConfig): Configuration for generation.
+
+    Usage:
+
+    .. code-block:: python
+
+      response = client.models.generate_images(
+        model='imagen-3.0-generate-002',
+        prompt='Man with a dog',
+        config=types.GenerateImagesConfig(
+            number_of_images= 1,
+            include_rai_reason= True,
+        )
+      )
+      response.generated_images[0].image.show()
+      # Shows a man with a dog.
+
