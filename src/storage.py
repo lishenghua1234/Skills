@@ -118,9 +118,9 @@ def export_material_packages(materials: list[dict]):
         else:
             title = "未命名素材"
             
-        # 清洗非法路径字符并限制长度
-        clean_title = re.sub(r'[\\/*?:"<>|]', "", title).strip()
-        short_title = clean_title[:10] if len(clean_title) > 10 else clean_title
+        # 清洗非法路径字符及各种阻碍终端执行的全半角标点符号（强化版）
+        clean_title = re.sub(r'[\\/*?:"<>|“”‘’！!，。：；,\.\[\]【】\s]', "", title).strip()
+        short_title = clean_title[:20] if len(clean_title) > 20 else clean_title
         
         # 为了防止重名或者标题提取得太短被覆盖，加上一段随机/事件ID后缀
         event_id = m.get("event_id", "0000")
